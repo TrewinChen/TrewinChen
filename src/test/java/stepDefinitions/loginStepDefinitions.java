@@ -96,6 +96,7 @@ public class loginStepDefinitions {
 	public void i_click_on_the_submit_button() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
+		System.out.println("Pending for button clicking...");
 	}
 	
 }
