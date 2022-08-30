@@ -1,0 +1,109 @@
+<button value="1" class="_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy" name="login" data-testid="royal_login_button" type="submit" id="u_0_d_Gq">Log In</button>
+
+Practise webpage:
+rahulshettyacademy.com/#/index
+
+
+xpath creation based on html line
+//tagName[@attribute='value']
+//button[@name='login']
+
+Can use regular expression by replacing button with *
+//*[@name='login']
+It means it will search any fields with attribue name with value 'login'
+
+If xpath keeps changing, use regular expression with contains
+//tagName[contains(@attribute,'value')] - xpath
+e.g 
+input name="username123">
+//input[contains(@name,'username')]
+
+
+CSS creation based on html line
+tagName[attribute='value']
+[attribute='value'] - skip tagName to search all fields with attribue name with value
+
+<input type="password" class="inputtext _55r1 _6luy _9npi" name="pass" id="pass" data-testid="royal_pass" placeholder="Password" aria-label="Password">
+
+another way for customised CSS
+tagName#ID -> Must be ID, if no ID is present, use the previous CSS customised method.
+input#pass
+
+or
+
+tagName.classname - not very reliable
+input.inputtext _55r1 _6luy _9npi
+
+CSS with regular expression:
+tagName[Attribute*='value'] - * means to find value within the string
+e.g.
+input name="username123">
+input[name*='username']
+
+Define parent-child relationship for xpath
+use this method if the exact field does not have unique value or it has attribute value keeps changing.
+//tagName[@attribute='value']/tagName/tagName etc.
+
+//div[@class='lst-c']/div/div[2]/div/input
+
+div[2] is the second class under the parent div, div[1] will be the first one.
+e.g. //div[@class='RNNXgb']/div/div[2]/input
+
+
+Info: Parent-Child relationship xpath is Absolute xpath.
+Relatives xpath does not depends on parent nodes
+
+detect slibing tab
+.//*[@id='tablist1-tab1']/following-sibling::li[2]
+following-sibling::li[2] - means find the slibing node 2 count down from the original node.
+
+e.g.
+//div[@class='clearfix']/div[2]/nav/div[2]/ul/li[2]/following-sibling::li[3]
+//*[@for='radio1']/following-sibling::label[3]
+
+if child is statics but parent is dynamic(changing), then using child to detect parent node
+//*[@for='radio1']/parent::ul
+
+Get grand-parent or great grandparent nodes
+//*[@for='radio1']/ancestor::div
+or
+//*[@for='radio1']/ancestor::div[@class='block large-row-spacer']
+or
+//*[@for='radio1']/ancestor::div[1] - Selecting the node based on the order
+
+Using //*[text()='textvalue'] when there is no other way to identify the attributes
+e.g. $x("//*[text()='Facebook helps you connect and share with the people in your life.']")
+
+
+shortcut for CSS
+#<ID>
+.<classname>
+no spaces in classname, if there are spaces, replace with '.'
+e.g. <a class="ui-state-default ui-state-highlight ui-state-active" href="#">7</a>
+CSS will be:
+Ans: .ui-state-default.ui-state-highlight.ui-state-active
+In Console to validate is $$("input.btn-primary.btn-md.login-button") 
+or
+$$(".btn-primary.btn-md.login-button")
+
+Parent-Child relationship for CSS
+By.cssSelector("input[id='start'] button") - without slash /, replace with " "
+or 
+By.cssSelector("[class='col-sm-5 find_companion_search'] [class='srh']")
+
+Test in console
+identify 1 CSS tag in multiple tags: $$(".inputtext._55r1._6luy[name='email']")
+identify 1 Xpath tag in multiple tags: $x("//input[@class='inputtext _55r1 _6luy _9npi'][@name]")
+
+By.TagName - search the element based on the tagname and count size
+e.g. By.tagName("iframe").size();
+
+find tagname, usually used in table:
+CSS - td:nth-child(4)
+xpath - //td[4]
+these locator finds the 4th column td in the table
+
+console for CSS
+$('a[href*="soapui"]')
+or
+$$("a[href*='soapui']")
