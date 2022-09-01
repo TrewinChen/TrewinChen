@@ -98,6 +98,7 @@ public class loginStepDefinitions {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
 		System.out.println("Pending for button clicking...");
+		System.out.println("To click or not to click.");
 	}
 	
 }
