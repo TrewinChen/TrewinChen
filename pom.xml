@@ -20,6 +20,8 @@
 		<pico-container-version>7.5.0</pico-container-version>
 		<cucumber-junit-version>7.6.0</cucumber-junit-version>
 		<sqlserver-version>11.2.0.jre11</sqlserver-version>
+		<report-version>5.0.9</report-version>
+		<cucumber-adapter>1.7.0</cucumber-adapter>
 	</properties>
 
 	<dependencies>
@@ -61,7 +63,17 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>${sqlserver-version}</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${report-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extentreports-cucumber7-adapter</artifactId>
+			<version>${cucumber-adapter}</version>
+		</dependency>	
 	</dependencies>
 
 	<build>

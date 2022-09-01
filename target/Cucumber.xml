@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.845">
+    <testcase classname="Login Process" name="Login to demo page" time="5.721">
+        <system-out><![CDATA[Given The Page is displayed.................................................passed
+When I enter the username with 'Trewin'.....................................passed
+And I enter the email with 'trewin@123.com'.................................passed
+And I enter the website with 'trewin.com.sg'................................passed
+And I select the years of experience........................................passed
+And I choose the expertise..................................................passed
+And I choose the education..................................................passed
+And I enter the comments with:..............................................passed
+Then I click on the submit button...........................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

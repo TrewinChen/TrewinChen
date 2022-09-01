@@ -12,7 +12,10 @@ import io.cucumber.junit.CucumberOptions;
 //		tags="@Regression",
 		dryRun=false,
 		monochrome=true,
-		plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
+//		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","json:target/cucumber-reports/Cucumber.json",
+//				"junit:target/Cucumber.xml",
+//				"html:target/Cucumber.html"}
+		plugin = { "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","json:target/cucumber-reports/Cucumber.json",
 				"junit:target/Cucumber.xml",
 				"html:target/Cucumber.html"}
 		)
