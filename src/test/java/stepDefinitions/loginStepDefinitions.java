@@ -89,6 +89,7 @@ public class loginStepDefinitions {
 	@When("I enter the comments with:")
 	public void i_enter_the_comments_with(String docString) {
 	    // Write code here that turns the phrase above into concrete actions
+		System.out.println("Entering comment in comments field.");
 		loginPage.comments().sendKeys(docString);
 	}
 
